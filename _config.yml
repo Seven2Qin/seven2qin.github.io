@@ -6,7 +6,7 @@
 title: Hexo
 subtitle:
 description:
-author: John Doe
+author: Seven Qin
 language:
 timezone:
 
@@ -77,6 +77,6 @@ theme: yilia
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:git
-  repository:git@github.com:Seven2Qin/seven2qin.github.io.git
-  branch:master
+  type: git
+  repo: git@github.com:Seven2Qin/seven2qin.github.io.git
+  branch: master
