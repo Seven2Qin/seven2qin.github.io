@@ -80,3 +80,6 @@ deploy:
   type: git
   repo: git@github.com:Seven2Qin/seven2qin.github.io.git
   branch: master
+
+Plugins:
+  hexo-generator-cname
