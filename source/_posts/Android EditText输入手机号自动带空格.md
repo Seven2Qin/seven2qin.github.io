@@ -1,10 +1,10 @@
 ---
-title: Android EditText输入手机号自动带空格(344格式) 
+title: EditText输入手机号自动带空格 
 date: 2018/5/29 11:26:25  # 文章发表时间
 tags:
 - Android
 categories: Android # 分类
-thumbnail: http://o835lhtor.bkt.clouddn.com/blog/img/1.jpg # 略缩图
+thumbnail: http://o835lhtor.bkt.clouddn.com/blog/img/2.jpg # 略缩图
 ---
 
 在android开发过程中，有时候需要这样展示手机号：186 0000  0000。
