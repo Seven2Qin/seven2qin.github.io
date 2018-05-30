@@ -6,7 +6,6 @@ tags:
 categories: Android # 分类
 thumbnail: http://o835lhtor.bkt.clouddn.com/blog/img/1.jpg # 略缩图
 ---
-# 登录成功后的各种场景
 -------------------
 首先，贯穿App  的，应该有一个User  全局变量，在每次登录成功后，会将其isLogin  属性设置为true ，在退出登录后，则将该属性设置为false 。这个User  全局变量要支持序列化到本地的功能，这样数据才不会因内存回收而丢失。
 其次，登录分为3  种情形：
