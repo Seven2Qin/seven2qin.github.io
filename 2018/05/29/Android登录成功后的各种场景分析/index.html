@@ -96,7 +96,7 @@
 	            <a href="#s1">Category</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Android/">Android</a>
+	                        <a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/React/">React</a>
 	                    </ul>
 	        </li>
 	        
@@ -131,7 +131,7 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="登录成功后的各种场景"><a href="#登录成功后的各种场景" class="headerlink" title="登录成功后的各种场景"></a>登录成功后的各种场景</h1><hr>
+                <hr>
 <p>首先，贯穿App  的，应该有一个User  全局变量，在每次登录成功后，会将其isLogin  属性设置为true ，在退出登录后，则将该属性设置为false 。这个User  全局变量要支持序列化到本地的功能，这样数据才不会因内存回收而丢失。<br>其次，登录分为3  种情形：<br><strong>情形1</strong>  ：点击登录按钮，进入登录页面LoginActivity ，登录成功后，直接进入个人中心<br>PersonCenterActivity 。这种情况最直截了当，一路执行startActivity(intent)  就能达到目的。<br><strong>情形2</strong>  ：在页面A ，想要跳转到页面B ，并携带一些参数，却发现没有登录，于是先跳<br>转到登录页，登录成功后，再跳转到B  页面，同时仍然带着那些参数。<br>这就主要是setResult(intent, resultCode)  发挥作用的时候了，Activity  的回调机制这时候<br>派上了用场，如下所示：</p>
 <pre class=" language-java"><code class="language-java">btnLogin2<span class="token punctuation">.</span><span class="token function">setOnClickListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">OnClickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 <span class="token annotation punctuation">@Override</span>
