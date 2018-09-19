@@ -4,7 +4,29 @@ date: 2018/5/29 11:26:25  # 文章发表时间
 tags:
 - Android
 categories: Android # 分类
-thumbnail: http://o835lhtor.bkt.clouddn.com/blog/img/2.jpg # 略缩图
+cover: http://o835lhtor.bkt.clouddn.com/blog/img/2.jpg # 略缩图
+
+# cover: http://o835lhtor.bkt.clouddn.com/blog/img/2.jpg
+# author information, multiple authors are set to array
+# single author
+author: 
+  nick: Seven
+  link: https://blog.csdn.net/sweiqin
+# multiple authors
+# author:
+#   - nick: BruceYJ
+#     link: https://www.github.com/BruceYuj
+#   - nick: minfive
+#     link: https://www.github.com/Mrminfive
+
+# If the article is reproduced, you need to increase the article source
+# editor:
+#   name: Minfive
+#   link: https://www.github.com/Mrminfive
+
+# post subtitle in your index page
+subtitle: 在android开发过程中，有时候需要这样展示手机号：186 0000  0000
+
 ---
 
 在android开发过程中，有时候需要这样展示手机号：186 0000  0000。

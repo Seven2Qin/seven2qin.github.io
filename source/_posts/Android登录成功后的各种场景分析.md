@@ -4,7 +4,12 @@ date: 2018/5/29 10:51:25  # 文章发表时间
 tags:
 - Android
 categories: Android # 分类
-thumbnail: http://o835lhtor.bkt.clouddn.com/blog/img/1.jpg # 略缩图
+cover: http://o835lhtor.bkt.clouddn.com/blog/img/1.jpg # 略缩图
+author: 
+  nick: Seven
+  link: https://blog.csdn.net/sweiqin
+# post subtitle in your index page
+subtitle: 首先，贯穿App  的，应该有一个User  全局变量，在每次登录成功后，会将其isLogin  属性设置为true ，在退出登录后，则将该属性设置为false 。这个User  全局变量要支持序列化到本地的功能，这样数据才不会因内存回收而丢失。
 ---
 -------------------
 首先，贯穿App  的，应该有一个User  全局变量，在每次登录成功后，会将其isLogin  属性设置为true ，在退出登录后，则将该属性设置为false 。这个User  全局变量要支持序列化到本地的功能，这样数据才不会因内存回收而丢失。

@@ -1,0 +1,31 @@
+friend_links:
+  - name: 郭霖的博客
+    desc: 郭霖的博客
+    link: http://blog.csdn.net/guolin_blog
+  - name: 鸿洋的博客
+    desc: 鸿洋的博客
+    link: http://blog.csdn.net/lmj623565791
+  - name: 任玉刚的博客
+    desc: 任玉刚的博客
+    link: http://blog.csdn.net/singwhatiwanna
+  - name: 老罗的Android之旅
+    desc: 老罗的Android之旅
+    link: http://blog.csdn.net/Luoshengyang
+  - name: 深入理解Android
+    desc: 深入理解Android
+    link: https://blog.csdn.net/column/details/innost.html
+  - name: 极客导航
+    desc: 极客导航
+    link: http://www.jikedaohang.com/
+
+build_tools:
+  - name: Hexo
+    desc: Blog Framework
+    link: https://hexo.io/
+  - name: hexo-theme-skapp
+    desc: hexo-theme-skapp
+    link: https://github.com/Mrminfive/hexo-theme-skapp
+  - name: hexo-theme-skapp示例
+    desc: hexo-theme-skapp示例
+    link: http://blog.minfive.com/
+
