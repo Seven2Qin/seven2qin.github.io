@@ -9,7 +9,7 @@ tags:
 categories: React # 分类
 cover: http://o835lhtor.bkt.clouddn.com/blog/img/react.png # 略缩图
 
-subtitle: 有很多情况下,需要父子组件的方法相互调用,这样就需要父子组件进行通信.
+subtitle: 有很多情况下,需要父子组件的方法互调,这样就需要父子组件进行通信.案列如下
 ---
 ### 代码块
 ```javascript

@@ -22,62 +22,62 @@ PersonCenterActivity 。这种情况最直截了当，一路执行startActivity(
 派上了用场，如下所示：
 ```java
 btnLogin2.setOnClickListener(new OnClickListener(){
-@Override
-public void onClick(View v) {
-if(User.getInstance().isLogin()) {
-gotoNewsActivity();
-} else {
-Intent intent = new Intent(LoginMainActivity.this,
-LoginActivity.class);
-intent.putExtra(AppConstants.NeedCallback, true);
-startActivityForResult(intent,
-LOGIN_REDIRECT_OUTSIDE);
-}
-}
+  @Override
+  public void onClick(View v) {
+    if(User.getInstance().isLogin()) {
+      gotoNewsActivity();
+    } else {
+      Intent intent = new Intent(LoginMainActivity.this,
+      LoginActivity.class);
+      intent.putExtra(AppConstants.NeedCallback, true);
+      startActivityForResult(intent,
+      LOGIN_REDIRECT_OUTSIDE);
+    }
+  }
 });
 ```
 **情形3**：在页面A，执行某个操作，却发现没有登录，于是跳转到登录页，登录成功后，再回到页面A，继续执行该操作。处理方式同于情形2，也是使用setResult 来完成回调。
 ```java
 btnLogin3.setOnClickListener(new OnClickListener(){
-@Override
-public void onClick(View v) {
-if(User.getInstance().isLogin()) {
-changeText();
-} else {
-Intent intent = new Intent(LoginMainActivity.this,
-LoginActivity.class);
-intent.putExtra(AppConstants.NeedCallback, true);
-startActivityForResult(intent,
-LOGIN_REDIRECT_INSIDE);
-}
-}
+  @Override
+  public void onClick(View v) {
+    if(User.getInstance().isLogin()) {
+      changeText();
+    } else {
+      Intent intent = new Intent(LoginMainActivity.this,
+      LoginActivity.class);
+      intent.putExtra(AppConstants.NeedCallback, true);
+      startActivityForResult(intent,
+      LOGIN_REDIRECT_INSIDE);
+    }
+  }
 });
 ```
 -------------------
 无论是上述哪种情形，登录页面LoginActivity  只有一个，所以要把上面的三个逻辑整合在一起，如下所示：
 ```java
 RequestCallback loginCallback = new AbstractRequestCallback() {
-@Override
-public void onSuccess(String content) {
-UserInfo userInfo = JSON.parseObject(content,
-UserInfo.class);
-if (userInfo != null) {
-User.getInstance().reset();
-User.getInstance().setLoginName(userInfo.getLoginName());
-User.getInstance().setScore(userInfo.getScore());
-User.getInstance().setUserName(userInfo.getUserName());
-User.getInstance().setLoginStatus(true);
-User.getInstance().save();
-}
-if(needCallback) {
-setResult(Activity.RESULT_OK);
-f inish();
-} else {
-Intent intent = new Intent(LoginActivity.this,
-PersonCenterActivity.class);
-startActivity(intent);
-}
-}
+  @Override
+  public void onSuccess(String content) {
+    UserInfo userInfo = JSON.parseObject(content,
+    UserInfo.class);
+    if (userInfo != null) {
+      User.getInstance().reset();
+      User.getInstance().setLoginName(userInfo.getLoginName());
+      User.getInstance().setScore(userInfo.getScore());
+      User.getInstance().setUserName(userInfo.getUserName());
+      User.getInstance().setLoginStatus(true);
+      User.getInstance().save();
+    }
+    if(needCallback) {
+      setResult(Activity.RESULT_OK);
+      finish();
+    } else {
+      Intent intent = new Intent(LoginActivity.this,
+      PersonCenterActivity.class);
+      startActivity(intent);
+    }
+  }
 };
 ```
 整合的关键在于从上个页面传过来needCallback  变量，它决定了是否要回到上个页面。另一方面，我们看到，在登录成功后，我们会把用户信息存储到User  这个全局变量并序列化到本地，这是因为各个模块都有可能使用到用户的信息。其中LoginStatus  是关键，接下来的篇幅将着重谈论这个属性。
@@ -86,19 +86,19 @@ startActivity(intent);
 @Override
 protected void onActivityResult(int requestCode,
 int resultCode, Intent data) {
-if (resultCode != Activity.RESULT_OK) {
-return;
-}
-switch (requestCode) {
-case LOGIN_REDIRECT_OUTSIDE:
-gotoNewsActivity();
-break;
-case LOGIN_REDIRECT_INSIDE:
-changeText();
-break;
-default:
-break;
-}
+  if (resultCode != Activity.RESULT_OK) {
+    return;
+  }
+  switch (requestCode) {
+    case LOGIN_REDIRECT_OUTSIDE:
+      gotoNewsActivity();
+      break;
+    case LOGIN_REDIRECT_INSIDE:
+      changeText();
+      break;
+    default:
+      break;
+  }
 }
 ```
 -------
