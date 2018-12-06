@@ -4,7 +4,7 @@ date: 2018/5/29 10:51:25  # 文章发表时间
 tags:
 - Android
 categories: Android # 分类
-cover: http://47.99.65.74/image/1.jpg # 略缩图
+cover: http://seven.beer/image/1.jpg # 略缩图
 author: 
   nick: Seven
   link: https://blog.csdn.net/sweiqin

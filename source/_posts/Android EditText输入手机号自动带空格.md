@@ -4,9 +4,9 @@ date: 2018/5/29 11:26:25  # 文章发表时间
 tags:
 - Android
 categories: Android # 分类
-cover: http://47.99.65.74/image/2.jpg # 略缩图
+cover: http://seven.beer/image/2.jpg # 略缩图
 
-# cover: http://47.99.65.74/image/2.jpg
+# cover: http://seven.beer/image/2.jpg
 # author information, multiple authors are set to array
 # single author
 author: 

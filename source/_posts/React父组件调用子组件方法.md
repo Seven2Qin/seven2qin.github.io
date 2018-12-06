@@ -7,7 +7,7 @@ date: 2018-05-30 17:40:23
 tags:
 - React
 categories: React # 分类
-cover: http://47.99.65.74/image/react.jpg # 略缩图
+cover: http://seven.beer/image/react.jpg # 略缩图
 
 subtitle: 有很多情况下,需要父子组件的方法互调,这样就需要父子组件进行通信.案列如下
 ---
