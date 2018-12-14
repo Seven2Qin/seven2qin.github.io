@@ -124,7 +124,7 @@ prism_plugin:
 menu:
   home: / 
   archive: /archives
-  about: /about
+  # about: /about
 
 # footer information
 about:
